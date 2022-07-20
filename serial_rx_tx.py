@@ -43,7 +43,6 @@ class SerialPort:
 
                     if self.receivedMessage != "":
                         self.ReceiveCallback(self.receivedMessage)
-                        print("read :  ", self.receivedMessage)
                     else:
                         self.ReceiveCallback("nothing-to-read")
                         print("nothing")

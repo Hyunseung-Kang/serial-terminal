@@ -22,7 +22,7 @@ root.title("GUI For Serial Data Terminal")
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 window_width = screen_width/2 + 70
-print("window_width: ", window_width)
+
 window_height = screen_width/3
 window_position_x = screen_width/2 - window_width/2
 window_position_y = screen_height/2 - window_height/2
@@ -106,7 +106,7 @@ def saveSingleData(message):
     f = open(SavingPath+"/"+filename+"-single.txt", "a")
     timestamp = time.strftime("%H:%M:%S\t")
     f.write(timestamp+message)
-    print("writing: ", timestamp+message)
+
     f.close()
 
 # serial data callback function
