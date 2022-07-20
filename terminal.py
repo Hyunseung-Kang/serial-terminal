@@ -85,6 +85,7 @@ def saveSingleData(message):
     f = open(SavingPath+"/"+filename+"-single.txt", "a")
     timestamp = time.strftime("%H:%M:%S\t")
     f.write(timestamp+message)
+    print("writing: ", timestamp+message)
     f.close()
 
 # serial data callback function

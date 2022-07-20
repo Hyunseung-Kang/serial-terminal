@@ -8,6 +8,7 @@ import serial
 import sys
 import _thread
 
+
 class SerialPort:
     def __init__(self):
         self.comportName = ""
@@ -34,17 +35,19 @@ class SerialPort:
             print("Error starting Read thread: ", sys.exc_info()[0])
 
     def SerialReadlineThread(self):
+
         while True:
             try:
                 if self.isopen:
-                    print("reading")
                     self.receivedMessage = self.serialport.readline()
+
                     if self.receivedMessage != "":
                         self.ReceiveCallback(self.receivedMessage)
                         print("read :  ", self.receivedMessage)
                     else:
                         self.ReceiveCallback("nothing-to-read")
                         print("nothing")
+
             except:
                 print("Error reading COM port: ", sys.exc_info()[0])
 
